@@ -1,5 +1,4 @@
-
-name: Python CI
+name: Python CI with Pytest
 
 on:
   push:
@@ -13,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
     - name: Setup Python
       uses: actions/setup-python@v4
@@ -24,6 +24,7 @@ jobs:
       run: |
         pip install -r app/requirements.txt
 
-    - name: Run basic test
+    - name: Run unit tests with pytest
       run: |
-        echo "Test berhasil dijalankan"
+        pytest app/test_app.py
+
