@@ -1,2 +1,3 @@
-def test_home():
-assert 1 + 1 == 2
+def test_benar():
+    assert 1 + 1 == 2
+
